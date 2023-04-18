@@ -20,6 +20,7 @@
             {
                 Console.WriteLine(str[i]);
             }
+            Console.WriteLine(list.Contains(str[0]));
         }
     }
 }

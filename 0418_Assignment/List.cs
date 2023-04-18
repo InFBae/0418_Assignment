@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -127,6 +128,14 @@ namespace DataStructure
             Array.Copy(items, 0, array, 0, size);
         }
 
+        public bool Contains(T item)        // Contains 함수 구현
+        {
+            foreach(T items in items)
+            {
+                if(items.Equals(item)) return true;
+            }
+            return false;
+        }
         private void IndexCheck(int index)      // IndexOutOfRangeException을 감지하는 내부용 함수 구현
         {
             if (index < 0 || index >= size)
