@@ -109,6 +109,17 @@ namespace DataStructure
             return -1;
         }
 
+        public int FindLastIndex(Predicate<T> match)        // FindLastIndex 함수 구현
+        {
+            if (match == null)
+                throw new ArgumentNullException("match");
+            for(int i = size-1; i >=0; i--)
+            {
+                if (match(items[i])) return i;
+            }
+            return -1;
+        }
+
         public void CopyTo(T[] array)       // CopyTo 함수 구현
         {
             if (array == null)
