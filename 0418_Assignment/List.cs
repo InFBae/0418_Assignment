@@ -97,6 +97,13 @@ namespace DataStructure
             return -1;
         }
 
+        public void CopyTo(T[] array)       // CopyTo 함수 구현
+        {
+            if (array == null)
+                throw new ArgumentNullException("array");
+            Array.Copy(items, 0, array, 0, size);
+        }
+
         private void IndexCheck(int index)      // IndexOutOfRangeException을 감지하는 내부용 함수 구현
         {
             if (index < 0 || index >= size)

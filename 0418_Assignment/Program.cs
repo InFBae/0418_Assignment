@@ -13,7 +13,13 @@
             {
                 Console.WriteLine(list[i]);
             }
-            
+            string[] str = new string[10];
+            list.CopyTo(str);
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine(str[i]);
+            }
         }
     }
 }
