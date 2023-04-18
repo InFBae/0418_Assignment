@@ -73,6 +73,30 @@ namespace DataStructure
             size--;
             Array.Copy(items, index + 1, items, index, size - index);
         }
+
+        public T? Find(Predicate<T> match)      // Find 함수 구현
+        {
+            if (match == null)
+                throw new ArgumentNullException("match");
+            for(int i = 0; i < size; i++) 
+            {
+                if (match(items[i]))
+                    return items[i];
+            }
+            return default(T);
+        }
+
+        public int FindIndex(Predicate<T> match)        // FindIndex 함수 구현
+        {
+            if (match == null)
+                throw new ArgumentNullException("match");
+            for(int i= 0; i < size; i++)
+            {
+                if (match(items[i])) return i;
+            }
+            return -1;
+        }
+
         private void IndexCheck(int index)      // IndexOutOfRangeException을 감지하는 내부용 함수 구현
         {
             if (index < 0 || index >= size)
