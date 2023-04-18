@@ -4,7 +4,16 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            DataStructure.List<string> list = new DataStructure.List<string>();
+            for(int i = 0; i < 10; i++)
+            {
+                list.Add($"{i}번째 리스트 원소");
+            }
+            for(int i = 0;i < list.Count; i++)
+            {
+                Console.WriteLine(list[i]);
+            }
+            
         }
     }
 }
