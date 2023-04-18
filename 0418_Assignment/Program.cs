@@ -9,6 +9,7 @@
             {
                 list.Add($"{i}번째 리스트 원소");
             }
+            /*
             for(int i = 0;i < list.Count; i++)
             {
                 Console.WriteLine(list[i]);
@@ -16,11 +17,18 @@
             string[] str = new string[10];
             list.CopyTo(str);
 
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < str.Length; i++)
             {
                 Console.WriteLine(str[i]);
             }
             Console.WriteLine(list.Contains(str[0]));
+            */
+            string[] temp = list.ToArray();
+            for(int i = 0; i < temp.Length ; i++)
+            {
+                Console.WriteLine(temp[i]);
+            }
+
         }
     }
 }

@@ -136,6 +136,14 @@ namespace DataStructure
             }
             return false;
         }
+
+        public T[] ToArray()        // ToArray  함수 구현
+        {
+            T[] array = new T[size];
+            Array.Copy(items, 0, array, 0, size);
+            return array;
+        }
+
         private void IndexCheck(int index)      // IndexOutOfRangeException을 감지하는 내부용 함수 구현
         {
             if (index < 0 || index >= size)
