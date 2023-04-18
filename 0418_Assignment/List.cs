@@ -86,6 +86,18 @@ namespace DataStructure
             return default(T);
         }
 
+        public T? FindLast(Predicate<T> match)      // FindLast 함수 구현
+        {
+            if (match == null)
+                throw new ArgumentNullException("match");
+            for(int i = size-1; i >= 0; i--)
+            {
+                if (match(items[i]))
+                    return items[i];
+            }
+            return default(T);
+        }
+
         public int FindIndex(Predicate<T> match)        // FindIndex 함수 구현
         {
             if (match == null)
