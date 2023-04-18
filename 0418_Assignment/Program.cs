@@ -22,13 +22,18 @@
                 Console.WriteLine(str[i]);
             }
             Console.WriteLine(list.Contains(str[0]));
-            */
+            
             string[] temp = list.ToArray();
             for(int i = 0; i < temp.Length ; i++)
             {
                 Console.WriteLine(temp[i]);
             }
-
+            */
+            list.Insert(0, "0번째에 삽입");
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine(list[i]);
+            }
         }
     }
 }

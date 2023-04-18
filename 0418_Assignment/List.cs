@@ -144,6 +144,21 @@ namespace DataStructure
             return array;
         }
 
+        public void Insert(int index, T item)       // Insert 함수 구현
+        {
+            IndexCheck(index);
+            if (items.Length <= size)
+            {
+                Grow();
+            }
+            T[] newList = new T[items.Length];
+            Array.Copy(items, 0, newList, 0, index);
+            newList[index] = item;
+            Array.Copy(items, index, newList, index + 1, size - index);
+            items = newList;
+            size++;
+        }
+
         private void IndexCheck(int index)      // IndexOutOfRangeException을 감지하는 내부용 함수 구현
         {
             if (index < 0 || index >= size)
